@@ -1,0 +1,54 @@
+﻿@model List<MvcBoutique.Models.Boutique>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+<!Doctype html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("https://media-api.xogrp.com/images/85e24d12-b876-4b60-82e4-3ac788a4bb00");
+            background-position:center;
+            background-size:cover;
+        }
+        .aa{
+            background-color:antiquewhite;
+            color:blue;
+        }
+        h1{
+            color:darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attire Fashion Destination</h1>
+    <div>
+        <table class="aa" border="1">
+            <tr>
+                <th>BoutiqueId</th>
+                <th>Dress Color</th>
+                <th>Dress Style</th>
+                <th>Dress Cost</th>
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.BoutiqueId</td>
+                    <td>@i.DColor</td>
+                    <td>@i.DStyle</td>
+                    <td>@i.DPrice</td>
+                    <td> @Html.ActionLink("Edit", "Onclick", new { id = i.BoutiqueId })</td>
+                    <td>@Html.ActionLink("Remove", "Delete", new { id = i.BoutiqueId })</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

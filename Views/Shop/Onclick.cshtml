@@ -1,0 +1,29 @@
+﻿@model MvcBoutique.Models.Boutique
+
+@{
+    ViewBag.Title = "Onclick";
+}
+
+<h2>Onclick</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>Enter the BoutiqueId:@Html.EditorFor((m) => m.BoutiqueId)</p>
+            <p>Enter the Dress color:@Html.EditorFor((m) => m.DColor)</p>
+            <p>Enter the Dress Style:@Html.EditorFor((m) => m.DStyle)</p>
+            <p>Enter the Dress Price:@Html.EditorFor((m) => m.DPrice)</p>
+      
+            <p><button>save</button></p>
+
+        }
+    </div>
+</body>
+</html>
